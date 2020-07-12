@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="YourPlaceModelStoreContainer" CdmEntityContainer="YourPlaceEntities">
+    <EntitySetMapping Name="Catagories_type_to_event">
+      <EntityTypeMapping TypeName="YourPlaceModel.Catagories_type_to_event">
+        <MappingFragment StoreEntitySet="Catagories_type_to_event">
+          <ScalarProperty Name="catagories_type_to_event_code" ColumnName="catagories_type_to_event_code" />
+          <ScalarProperty Name="event_code" ColumnName="event_code" />
+          <ScalarProperty Name="dis" ColumnName="dis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event">
+      <EntityTypeMapping TypeName="YourPlaceModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="event_code" ColumnName="event_code" />
+          <ScalarProperty Name="event_type" ColumnName="event_type" />
+          <ScalarProperty Name="event_dis" ColumnName="event_dis" />
+          <ScalarProperty Name="event_date" ColumnName="event_date" />
+          <ScalarProperty Name="manager_code" ColumnName="manager_code" />
+          <ScalarProperty Name="seating_arrangement_code" ColumnName="seating_arrangement_code" />
+          <ScalarProperty Name="invitation" ColumnName="invitation" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventType">
+      <EntityTypeMapping TypeName="YourPlaceModel.EventType">
+        <MappingFragment StoreEntitySet="EventType">
+          <ScalarProperty Name="event_type" ColumnName="event_type" />
+          <ScalarProperty Name="event_type_dis" ColumnName="event_type_dis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guests">
+      <EntityTypeMapping TypeName="YourPlaceModel.Guests">
+        <MappingFragment StoreEntitySet="Guests">
+          <ScalarProperty Name="guest_code" ColumnName="guest_code" />
+          <ScalarProperty Name="guest_name" ColumnName="guest_name" />
+          <ScalarProperty Name="guest_link_email" ColumnName="guest_link_email" />
+          <ScalarProperty Name="event_code" ColumnName="event_code" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="table_code" ColumnName="table_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guests_catagories_guests">
+      <EntityTypeMapping TypeName="YourPlaceModel.Guests_catagories_guests">
+        <MappingFragment StoreEntitySet="Guests_catagories_guests">
+          <ScalarProperty Name="guestsat_cagories_guests_code" ColumnName="guestsat_cagories_guests_code" />
+          <ScalarProperty Name="guest_code" ColumnName="guest_code" />
+          <ScalarProperty Name="catagories_guests_code" ColumnName="catagories_guests_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guests_table">
+      <EntityTypeMapping TypeName="YourPlaceModel.Guests_table">
+        <MappingFragment StoreEntitySet="Guests_table">
+          <ScalarProperty Name="guests_table_code" ColumnName="guests_table_code" />
+          <ScalarProperty Name="table_code" ColumnName="table_code" />
+          <ScalarProperty Name="guest_code" ColumnName="guest_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SeatingArrangement">
+      <EntityTypeMapping TypeName="YourPlaceModel.SeatingArrangement">
+        <MappingFragment StoreEntitySet="SeatingArrangement">
+          <ScalarProperty Name="seating_arrangement_code" ColumnName="seating_arrangement_code" />
+          <ScalarProperty Name="arrangement_type" ColumnName="arrangement_type" />
+          <ScalarProperty Name="dad_seating_arrangement_code" ColumnName="dad_seating_arrangement_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="YourPlaceModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_category">
+      <EntityTypeMapping TypeName="YourPlaceModel.Table_category">
+        <MappingFragment StoreEntitySet="Table_category">
+          <ScalarProperty Name="category_code" ColumnName="category_code" />
+          <ScalarProperty Name="category_type" ColumnName="category_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="YourPlaceModel.Tables">
+        <MappingFragment StoreEntitySet="Tables">
+          <ScalarProperty Name="table_code" ColumnName="table_code" />
+          <ScalarProperty Name="table_type_code" ColumnName="table_type_code" />
+          <ScalarProperty Name="category_code" ColumnName="category_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="YourPlaceModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="manager_code" ColumnName="manager_code" />
+          <ScalarProperty Name="manager_name" ColumnName="manager_name" />
+          <ScalarProperty Name="manager_phone_number" ColumnName="manager_phone_number" />
+          <ScalarProperty Name="manager_email" ColumnName="manager_email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guest_table_members">
+      <EntityTypeMapping TypeName="YourPlaceModel.guest_table_members">
+        <MappingFragment StoreEntitySet="guest_table_members">
+          <ScalarProperty Name="table_members_code" ColumnName="table_members_code" />
+          <ScalarProperty Name="guest_code" ColumnName="guest_code" />
+          <ScalarProperty Name="friend1_code" ColumnName="friend1_code" />
+          <ScalarProperty Name="friend2_code" ColumnName="friend2_code" />
+          <ScalarProperty Name="friend3_code" ColumnName="friend3_code" />
+          <ScalarProperty Name="dislike_code" ColumnName="dislike_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

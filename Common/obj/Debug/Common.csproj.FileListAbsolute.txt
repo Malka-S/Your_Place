@@ -1,0 +1,11 @@
+C:\Users\Me\Desktop\NEW\YourPlace\Common\bin\Debug\Common.dll
+C:\Users\Me\Desktop\NEW\YourPlace\Common\bin\Debug\Common.pdb
+C:\Users\Me\Desktop\NEW\YourPlace\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\Me\Desktop\NEW\YourPlace\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Me\Desktop\NEW\YourPlace\Common\obj\Debug\Common.dll
+C:\Users\Me\Desktop\NEW\YourPlace\Common\obj\Debug\Common.pdb
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Common\bin\Debug\Common.dll
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Common\bin\Debug\Common.pdb
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Common\obj\Debug\Common.dll
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Common\obj\Debug\Common.pdb

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="YourPlaceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Catagories_type_to_event">
+    <Key>
+      <PropertyRef Name="catagories_type_to_event_code" />
+    </Key>
+    <Property Name="catagories_type_to_event_code" Type="int" Nullable="false" />
+    <Property Name="event_code" Type="int" />
+    <Property Name="dis" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="event_code" />
+    </Key>
+    <Property Name="event_code" Type="int" Nullable="false" />
+    <Property Name="event_type" Type="int" />
+    <Property Name="event_dis" Type="varchar" MaxLength="32" />
+    <Property Name="event_date" Type="datetime" Nullable="false" />
+    <Property Name="manager_code" Type="int" />
+    <Property Name="seating_arrangement_code" Type="int" />
+    <Property Name="invitation" Type="varchar" MaxLength="40" />
+    <Property Name="due_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EventType">
+    <Key>
+      <PropertyRef Name="event_type" />
+    </Key>
+    <Property Name="event_type" Type="int" Nullable="false" />
+    <Property Name="event_type_dis" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'YourPlace.dbo.guest_table_members' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="guest_table_members">
+    <Key>
+      <PropertyRef Name="table_members_code" />
+    </Key>
+    <Property Name="table_members_code" Type="int" Nullable="false" />
+    <Property Name="guest_code" Type="int" />
+    <Property Name="friend1_code" Type="int" />
+    <Property Name="friend2_code" Type="int" />
+    <Property Name="friend3_code" Type="int" />
+    <Property Name="dislike_code" Type="int" />
+  </EntityType>
+  <EntityType Name="Guests">
+    <Key>
+      <PropertyRef Name="guest_code" />
+    </Key>
+    <Property Name="guest_code" Type="int" Nullable="false" />
+    <Property Name="guest_name" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="guest_link_email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="event_code" Type="int" />
+    <Property Name="gender" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="table_code" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Guests_catagories_guests">
+    <Key>
+      <PropertyRef Name="guestsat_cagories_guests_code" />
+    </Key>
+    <Property Name="guestsat_cagories_guests_code" Type="int" Nullable="false" />
+    <Property Name="guest_code" Type="int" />
+    <Property Name="catagories_guests_code" Type="int" />
+  </EntityType>
+  <EntityType Name="Guests_table">
+    <Key>
+      <PropertyRef Name="guests_table_code" />
+    </Key>
+    <Property Name="guests_table_code" Type="int" Nullable="false" />
+    <Property Name="table_code" Type="int" />
+    <Property Name="guest_code" Type="int" />
+  </EntityType>
+  <EntityType Name="SeatingArrangement">
+    <Key>
+      <PropertyRef Name="seating_arrangement_code" />
+    </Key>
+    <Property Name="seating_arrangement_code" Type="int" Nullable="false" />
+    <Property Name="arrangement_type" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="dad_seating_arrangement_code" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Table_category">
+    <Key>
+      <PropertyRef Name="category_code" />
+    </Key>
+    <Property Name="category_code" Type="int" Nullable="false" />
+    <Property Name="category_type" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tables">
+    <Key>
+      <PropertyRef Name="table_code" />
+    </Key>
+    <Property Name="table_code" Type="int" Nullable="false" />
+    <Property Name="table_type_code" Type="int" />
+    <Property Name="category_code" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="manager_code" />
+    </Key>
+    <Property Name="manager_code" Type="int" Nullable="false" />
+    <Property Name="manager_name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="manager_phone_number" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="manager_email" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Event_EventType">
+    <End Role="EventType" Type="Self.EventType" Multiplicity="0..1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventType">
+        <PropertyRef Name="event_type" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="event_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_SeatingArrangement">
+    <End Role="SeatingArrangement" Type="Self.SeatingArrangement" Multiplicity="0..1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SeatingArrangement">
+        <PropertyRef Name="seating_arrangement_code" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="seating_arrangement_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Users">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="manager_code" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="manager_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guests_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+    <End Role="Guests" Type="Self.Guests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="event_code" />
+      </Principal>
+      <Dependent Role="Guests">
+        <PropertyRef Name="event_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="YourPlaceModelStoreContainer">
+    <EntitySet Name="Catagories_type_to_event" EntityType="Self.Catagories_type_to_event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventType" EntityType="Self.EventType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guests" EntityType="Self.Guests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guests_catagories_guests" EntityType="Self.Guests_catagories_guests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guests_table" EntityType="Self.Guests_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SeatingArrangement" EntityType="Self.SeatingArrangement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_category" EntityType="Self.Table_category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="guest_table_members" EntityType="Self.guest_table_members" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [guest_table_members].[table_members_code] AS [table_members_code], 
+    [guest_table_members].[guest_code] AS [guest_code], 
+    [guest_table_members].[friend1_code] AS [friend1_code], 
+    [guest_table_members].[friend2_code] AS [friend2_code], 
+    [guest_table_members].[friend3_code] AS [friend3_code], 
+    [guest_table_members].[dislike_code] AS [dislike_code]
+    FROM [dbo].[guest_table_members] AS [guest_table_members]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Event_EventType" Association="Self.FK_Event_EventType">
+      <End Role="EventType" EntitySet="EventType" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_SeatingArrangement" Association="Self.FK_Event_SeatingArrangement">
+      <End Role="SeatingArrangement" EntitySet="SeatingArrangement" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Users" Association="Self.FK_Event_Users">
+      <End Role="User" EntitySet="User" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guests_Event" Association="Self.FK_Guests_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Guests" EntitySet="Guests" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

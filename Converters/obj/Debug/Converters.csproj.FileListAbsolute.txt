@@ -1,0 +1,14 @@
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\bin\Debug\Converters.dll
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\bin\Debug\Converters.pdb
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\bin\Debug\Common.dll
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\bin\Debug\DAL.dll
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\bin\Debug\EntityFramework.dll
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\bin\Debug\Common.pdb
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\bin\Debug\DAL.pdb
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\bin\Debug\DAL.dll.config
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\bin\Debug\EntityFramework.xml
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\obj\Debug\Converters.csprojAssemblyReference.cache
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\obj\Debug\Converters.csproj.CoreCompileInputs.cache
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\obj\Debug\Converters.csproj.CopyComplete
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\obj\Debug\Converters.dll
+D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Converters\obj\Debug\Converters.pdb
