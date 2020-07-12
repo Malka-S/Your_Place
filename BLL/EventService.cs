@@ -13,6 +13,9 @@ namespace BLL
        public static List<Common.DTO.EventDto> GetAllEvents()
         {
             return Converters.EventConverter.ToDtoEventList (DAL.EventDal.SelectEvents());
+        
+        
+        
         }
     }
 
