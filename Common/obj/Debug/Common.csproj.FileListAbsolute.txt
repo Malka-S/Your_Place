@@ -9,3 +9,9 @@ D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Common\bin\D
 D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Common\obj\Debug\Common.dll
 D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\Common\obj\Debug\Common.pdb
+D:\user\Desktop\YourPlace\Your_Place\Common\bin\Debug\Common.dll
+D:\user\Desktop\YourPlace\Your_Place\Common\bin\Debug\Common.pdb
+D:\user\Desktop\YourPlace\Your_Place\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\user\Desktop\YourPlace\Your_Place\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\user\Desktop\YourPlace\Your_Place\Common\obj\Debug\Common.dll
+D:\user\Desktop\YourPlace\Your_Place\Common\obj\Debug\Common.pdb

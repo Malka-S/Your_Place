@@ -12,20 +12,18 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Guest_catagory
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Guest_catagory()
         {
-            this.Event = new HashSet<Event>();
+            this.Guest = new HashSet<Guest>();
         }
     
-        public int manager_code { get; set; }
-        public string manager_name { get; set; }
-        public string manager_phone_number { get; set; }
-        public string manager_email { get; set; }
+        public int guest_catagory_id { get; set; }
+        public string guest_catagory_des { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Event> Event { get; set; }
+        public virtual ICollection<Guest> Guest { get; set; }
     }
 }

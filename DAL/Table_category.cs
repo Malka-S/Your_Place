@@ -14,7 +14,16 @@ namespace DAL
     
     public partial class Table_category
     {
-        public int category_code { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Table_category()
+        {
+            this.Tables = new HashSet<Tables>();
+        }
+    
+        public int category_id { get; set; }
         public string category_type { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tables> Tables { get; set; }
     }
 }

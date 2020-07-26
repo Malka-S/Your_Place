@@ -14,8 +14,23 @@ namespace DAL
     
     public partial class Tables
     {
-        public int table_code { get; set; }
-        public Nullable<int> table_type_code { get; set; }
-        public Nullable<int> category_code { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tables()
+        {
+            this.Guest = new HashSet<Guest>();
+            this.Guest_table = new HashSet<Guest_table>();
+        }
+    
+        public int table_id { get; set; }
+        public Nullable<int> category_id { get; set; }
+        public Nullable<int> event_id { get; set; }
+        public string table_title { get; set; }
+        public Nullable<int> amount_of_places { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Guest> Guest { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Guest_table> Guest_table { get; set; }
+        public virtual Table_category Table_category { get; set; }
     }
 }

@@ -15,3 +15,15 @@ D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\DAL\obj\Debu
 D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\DAL\obj\Debug\DAL.dll
 D:\שונות\שרהלה\מחשבים\YourPlace\YourPlace\YourPlace\DAL\obj\Debug\DAL.pdb
+D:\user\Desktop\YourPlace\Your_Place\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\user\Desktop\YourPlace\Your_Place\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\user\Desktop\YourPlace\Your_Place\DAL\obj\Debug\DAL.dll
+D:\user\Desktop\YourPlace\Your_Place\DAL\obj\Debug\DAL.pdb
+D:\user\Desktop\YourPlace\Your_Place\DAL\bin\Debug\DAL.dll.config
+D:\user\Desktop\YourPlace\Your_Place\DAL\bin\Debug\DAL.dll
+D:\user\Desktop\YourPlace\Your_Place\DAL\bin\Debug\DAL.pdb
+D:\user\Desktop\YourPlace\Your_Place\DAL\bin\Debug\EntityFramework.dll
+D:\user\Desktop\YourPlace\Your_Place\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\user\Desktop\YourPlace\Your_Place\DAL\bin\Debug\EntityFramework.xml
+D:\user\Desktop\YourPlace\Your_Place\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\user\Desktop\YourPlace\Your_Place\DAL\obj\Debug\DAL.csproj.CopyComplete

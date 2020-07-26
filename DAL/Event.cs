@@ -17,22 +17,20 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Event()
         {
-            this.Guests = new HashSet<Guests>();
+            this.Guest = new HashSet<Guest>();
         }
     
-        public int event_code { get; set; }
+        public int event_id { get; set; }
         public Nullable<int> event_type { get; set; }
-        public string event_dis { get; set; }
+        public string event_des { get; set; }
         public System.DateTime event_date { get; set; }
-        public Nullable<int> manager_code { get; set; }
-        public Nullable<int> seating_arrangement_code { get; set; }
-        public string invitation { get; set; }
-        public Nullable<System.DateTime> due_date { get; set; }
+        public Nullable<int> user_id { get; set; }
+        public string invitation_file { get; set; }
+        public System.DateTime due_date { get; set; }
     
         public virtual EventType EventType { get; set; }
-        public virtual SeatingArrangement SeatingArrangement { get; set; }
-        public virtual User User { get; set; }
+        public virtual Users Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Guests> Guests { get; set; }
+        public virtual ICollection<Guest> Guest { get; set; }
     }
 }

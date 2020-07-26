@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,16 +11,16 @@ namespace Converters
         public static DAL.Event ToDalEvent(Common.DTO.EventDto e)
         {
             DAL.Event ev = new DAL.Event();
-            ev.event_code = e.event_code;
-            ev.invitation = e.invitation;
+            ev.event_id = e.event_id;
+            ev.invitation_file = e.invitation_file;
             ///....
             return ev;
         }
         public static Common.DTO.EventDto ToDtoEvent( DAL.Event e)
         {
             Common.DTO.EventDto ev = new Common.DTO.EventDto();
-            ev.event_code = e.event_code;
-            ev.invitation = e.invitation;
+            ev.event_id = e.event_id;
+            ev.invitation_file = e.invitation_file;
             return ev;
 
         }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +17,48 @@ namespace BLL
         
         
         }
+    public static Common.DTO.EventDto SelectEvents(int code)
+    {
+      return Converters.EventConverter.ToDtoEvent(DAL.EventDal.SalectEvent(code));
     }
+
+    public static int DeleteEventByCode(int code)
+    {
+      try
+      {
+        return DAL.EventDal.DeletEvent(code);
+      }
+      catch
+      {
+        throw;
+      }
+    }
+
+    //public static int UpdateEvent(Common.DTO.EventDto event)
+    //{
+    //    try
+    //    {
+    //        return DAL.EventDal.UpdateEvent(Converters.EventConverter.ToDalEvent(event));
+    //    }
+    //    catch (Exception e)
+    //    {
+
+    //        throw;
+    //    }
+    //}
+
+    //public static int AddEvent(Common.DTO.EventDto event)
+    //{
+    //    try
+    //    {
+    //        return DAL.EventDal.AddEvent(Converters.EventConverter.ToDalEvent(event));
+    //    }
+    //    catch (Exception e)
+    //    {
+
+    //        throw;
+    //    }
+    //}
+  }
 
 }

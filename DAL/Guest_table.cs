@@ -12,15 +12,13 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Guests
+    public partial class Guest_table
     {
-        public int guest_code { get; set; }
-        public string guest_name { get; set; }
-        public string guest_link_email { get; set; }
-        public Nullable<int> event_code { get; set; }
-        public string gender { get; set; }
-        public string table_code { get; set; }
+        public int guests_table_id { get; set; }
+        public Nullable<int> table_id { get; set; }
+        public Nullable<int> guest_id { get; set; }
     
-        public virtual Event Event { get; set; }
+        public virtual Guest Guest { get; set; }
+        public virtual Tables Tables { get; set; }
     }
 }

@@ -13,10 +13,10 @@ namespace DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class YourPlaceEntities : DbContext
+    public partial class YourPlaceEntities1 : DbContext
     {
-        public YourPlaceEntities()
-            : base("name=YourPlaceEntities")
+        public YourPlaceEntities1()
+            : base("name=YourPlaceEntities1")
         {
         }
     
@@ -25,17 +25,15 @@ namespace DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Catagories_type_to_event> Catagories_type_to_event { get; set; }
         public virtual DbSet<Event> Event { get; set; }
         public virtual DbSet<EventType> EventType { get; set; }
-        public virtual DbSet<Guests> Guests { get; set; }
-        public virtual DbSet<Guests_catagories_guests> Guests_catagories_guests { get; set; }
-        public virtual DbSet<Guests_table> Guests_table { get; set; }
-        public virtual DbSet<SeatingArrangement> SeatingArrangement { get; set; }
+        public virtual DbSet<Guest> Guest { get; set; }
+        public virtual DbSet<Guest_catagory> Guest_catagory { get; set; }
+        public virtual DbSet<Guest_table> Guest_table { get; set; }
+        public virtual DbSet<guest_table_member> guest_table_member { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Table_category> Table_category { get; set; }
         public virtual DbSet<Tables> Tables { get; set; }
-        public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<guest_table_members> guest_table_members { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

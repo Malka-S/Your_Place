@@ -12,17 +12,20 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class SeatingArrangement
+    public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SeatingArrangement()
+        public Users()
         {
             this.Event = new HashSet<Event>();
         }
     
-        public int seating_arrangement_code { get; set; }
-        public string arrangement_type { get; set; }
-        public Nullable<int> dad_seating_arrangement_code { get; set; }
+        public int user_id { get; set; }
+        public string user_last_name { get; set; }
+        public string user_first_name { get; set; }
+        public string user_phone_number { get; set; }
+        public string user_email { get; set; }
+        public string user_password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Event> Event { get; set; }
