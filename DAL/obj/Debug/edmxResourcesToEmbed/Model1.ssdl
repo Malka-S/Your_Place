@@ -5,7 +5,7 @@
       <PropertyRef Name="event_id" />
     </Key>
     <Property Name="event_id" Type="int" Nullable="false" />
-    <Property Name="event_type" Type="int" />
+    <Property Name="event_type_id" Type="int" />
     <Property Name="event_des" Type="varchar" MaxLength="50" />
     <Property Name="event_date" Type="datetime" Nullable="false" />
     <Property Name="user_id" Type="int" />
@@ -14,9 +14,9 @@
   </EntityType>
   <EntityType Name="EventType">
     <Key>
-      <PropertyRef Name="event_type" />
+      <PropertyRef Name="event_type_id" />
     </Key>
-    <Property Name="event_type" Type="int" Nullable="false" />
+    <Property Name="event_type_id" Type="int" Nullable="false" />
     <Property Name="event_type_des" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Guest">
@@ -102,10 +102,10 @@
     <End Role="Event" Type="Self.Event" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="EventType">
-        <PropertyRef Name="event_type" />
+        <PropertyRef Name="event_type_id" />
       </Principal>
       <Dependent Role="Event">
-        <PropertyRef Name="event_type" />
+        <PropertyRef Name="event_type_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

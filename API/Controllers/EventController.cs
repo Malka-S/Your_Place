@@ -27,6 +27,23 @@ namespace API.Controllers
       }
     }
 
+    [HttpGet]
+    [Route("GetEventType")]
+    public IHttpActionResult GetEventType()
+    {
+      try
+      {
+        var q = BLL.EventService.GetEventType();
+        if (q != null)
+          return Ok(q);
+        return NotFound();
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+
     //Rout עם פרמטרים
     //יש לכלול פרמטרים בהגדרת הנתיב
     [HttpGet]

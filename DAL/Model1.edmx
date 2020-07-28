@@ -10,7 +10,7 @@
             <PropertyRef Name="event_id" />
           </Key>
           <Property Name="event_id" Type="int" Nullable="false" />
-          <Property Name="event_type" Type="int" />
+          <Property Name="event_type_id" Type="int" />
           <Property Name="event_des" Type="varchar" MaxLength="50" />
           <Property Name="event_date" Type="datetime" Nullable="false" />
           <Property Name="user_id" Type="int" />
@@ -19,9 +19,9 @@
         </EntityType>
         <EntityType Name="EventType">
           <Key>
-            <PropertyRef Name="event_type" />
+            <PropertyRef Name="event_type_id" />
           </Key>
-          <Property Name="event_type" Type="int" Nullable="false" />
+          <Property Name="event_type_id" Type="int" Nullable="false" />
           <Property Name="event_type_des" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Guest">
@@ -107,10 +107,10 @@
           <End Role="Event" Type="Self.Event" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EventType">
-              <PropertyRef Name="event_type" />
+              <PropertyRef Name="event_type_id" />
             </Principal>
             <Dependent Role="Event">
-              <PropertyRef Name="event_type" />
+              <PropertyRef Name="event_type_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -284,7 +284,7 @@
             <PropertyRef Name="event_id" />
           </Key>
           <Property Name="event_id" Type="Int32" Nullable="false" />
-          <Property Name="event_type" Type="Int32" />
+          <Property Name="event_type_id" Type="Int32" />
           <Property Name="event_des" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="event_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="user_id" Type="Int32" />
@@ -296,9 +296,9 @@
         </EntityType>
         <EntityType Name="EventType">
           <Key>
-            <PropertyRef Name="event_type" />
+            <PropertyRef Name="event_type_id" />
           </Key>
-          <Property Name="event_type" Type="Int32" Nullable="false" />
+          <Property Name="event_type_id" Type="Int32" Nullable="false" />
           <Property Name="event_type_des" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Event" Relationship="Self.FK__Event__event_typ__32E0915F" FromRole="EventType" ToRole="Event" />
         </EntityType>
@@ -401,10 +401,10 @@
           <End Role="Event" Type="Self.Event" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EventType">
-              <PropertyRef Name="event_type" />
+              <PropertyRef Name="event_type_id" />
             </Principal>
             <Dependent Role="Event">
-              <PropertyRef Name="event_type" />
+              <PropertyRef Name="event_type_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -516,7 +516,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="YourPlaceEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="YourPlaceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Event" EntityType="Self.Event" />
           <EntitySet Name="EventType" EntityType="Self.EventType" />
           <EntitySet Name="Guest" EntityType="Self.Guest" />
@@ -573,12 +573,12 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="YourPlaceModelStoreContainer" CdmEntityContainer="YourPlaceEntities1">
+        <EntityContainerMapping StorageEntityContainer="YourPlaceModelStoreContainer" CdmEntityContainer="YourPlaceEntities">
           <EntitySetMapping Name="Event">
             <EntityTypeMapping TypeName="YourPlaceModel.Event">
               <MappingFragment StoreEntitySet="Event">
                 <ScalarProperty Name="event_id" ColumnName="event_id" />
-                <ScalarProperty Name="event_type" ColumnName="event_type" />
+                <ScalarProperty Name="event_type_id" ColumnName="event_type_id" />
                 <ScalarProperty Name="event_des" ColumnName="event_des" />
                 <ScalarProperty Name="event_date" ColumnName="event_date" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -590,7 +590,7 @@
           <EntitySetMapping Name="EventType">
             <EntityTypeMapping TypeName="YourPlaceModel.EventType">
               <MappingFragment StoreEntitySet="EventType">
-                <ScalarProperty Name="event_type" ColumnName="event_type" />
+                <ScalarProperty Name="event_type_id" ColumnName="event_type_id" />
                 <ScalarProperty Name="event_type_des" ColumnName="event_type_des" />
               </MappingFragment>
             </EntityTypeMapping>

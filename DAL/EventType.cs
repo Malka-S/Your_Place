@@ -20,7 +20,7 @@ namespace DAL
             this.Event = new HashSet<Event>();
         }
     
-        public int event_type { get; set; }
+        public int event_type_id { get; set; }
         public string event_type_des { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

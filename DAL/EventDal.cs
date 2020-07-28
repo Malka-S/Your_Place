@@ -6,18 +6,27 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-   public class EventDal
+  public class EventDal
+  {
+    public static List<Event> SelectEvents()
     {
-        public static List<Event> SelectEvents()
-        {
-            using (YourPlaceEntities1 db = new YourPlaceEntities1())
-            {
-                return db.Event.ToList();
-            }
-        }
+      using (YourPlaceEntities db = new YourPlaceEntities())
+      {
+        return db.Event.ToList();
+      }
+    }
+
+    public static List<EventType> SelectEventType()
+    {
+      using (YourPlaceEntities db = new YourPlaceEntities())
+      {
+        return db.EventType.ToList();
+      }
+    }
+
     public static Event SalectEvent(int code)
     {
-      using (YourPlaceEntities1 db = new YourPlaceEntities1())
+      using (YourPlaceEntities db = new YourPlaceEntities())
       {
         return db.Event.FirstOrDefault(e => e.event_id == code);
       }
@@ -27,7 +36,7 @@ namespace DAL
     //{
     //    try
     //    {
-    //        using (YourPlaceEntities1 db = new YourPlaceEntities1())
+    //        using (YourPlaceEntities db = new YourPlaceEntities())
     //        {
     //            var q1=db.Event.FirstOrDefault(e => e.event_code==event.event_code);
     //            if (q1 == null)
@@ -55,7 +64,7 @@ namespace DAL
     {
       try
       {
-        using (YourPlaceEntities1 db = new YourPlaceEntities1())
+        using (YourPlaceEntities db = new YourPlaceEntities())
         {
           var q1 = db.Event.FirstOrDefault(e => e.event_id == code);
           if (q1 == null)
@@ -81,7 +90,7 @@ namespace DAL
     // {
     //     try
     //     {
-    //         using (YourPlaceEntities1 db = new YourPlaceEntities1())
+    //         using (YourPlaceEntities db = new YourPlaceEntities())
     //         {
     //             var q1 = db.Event.Add(event);
     //             //שמור שינוי

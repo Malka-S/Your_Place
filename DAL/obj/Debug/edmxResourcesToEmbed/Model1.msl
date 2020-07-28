@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="YourPlaceModelStoreContainer" CdmEntityContainer="YourPlaceEntities1">
+  <EntityContainerMapping StorageEntityContainer="YourPlaceModelStoreContainer" CdmEntityContainer="YourPlaceEntities">
     <EntitySetMapping Name="Event">
       <EntityTypeMapping TypeName="YourPlaceModel.Event">
         <MappingFragment StoreEntitySet="Event">
           <ScalarProperty Name="event_id" ColumnName="event_id" />
-          <ScalarProperty Name="event_type" ColumnName="event_type" />
+          <ScalarProperty Name="event_type_id" ColumnName="event_type_id" />
           <ScalarProperty Name="event_des" ColumnName="event_des" />
           <ScalarProperty Name="event_date" ColumnName="event_date" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -17,7 +17,7 @@
     <EntitySetMapping Name="EventType">
       <EntityTypeMapping TypeName="YourPlaceModel.EventType">
         <MappingFragment StoreEntitySet="EventType">
-          <ScalarProperty Name="event_type" ColumnName="event_type" />
+          <ScalarProperty Name="event_type_id" ColumnName="event_type_id" />
           <ScalarProperty Name="event_type_des" ColumnName="event_type_des" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -21,7 +21,7 @@ namespace DAL
         }
     
         public int event_id { get; set; }
-        public Nullable<int> event_type { get; set; }
+        public Nullable<int> event_type_id { get; set; }
         public string event_des { get; set; }
         public System.DateTime event_date { get; set; }
         public Nullable<int> user_id { get; set; }

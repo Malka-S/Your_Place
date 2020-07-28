@@ -5,7 +5,7 @@
       <PropertyRef Name="event_id" />
     </Key>
     <Property Name="event_id" Type="Int32" Nullable="false" />
-    <Property Name="event_type" Type="Int32" />
+    <Property Name="event_type_id" Type="Int32" />
     <Property Name="event_des" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="event_date" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="user_id" Type="Int32" />
@@ -17,9 +17,9 @@
   </EntityType>
   <EntityType Name="EventType">
     <Key>
-      <PropertyRef Name="event_type" />
+      <PropertyRef Name="event_type_id" />
     </Key>
-    <Property Name="event_type" Type="Int32" Nullable="false" />
+    <Property Name="event_type_id" Type="Int32" Nullable="false" />
     <Property Name="event_type_des" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Event" Relationship="Self.FK__Event__event_typ__32E0915F" FromRole="EventType" ToRole="Event" />
   </EntityType>
@@ -122,10 +122,10 @@
     <End Role="Event" Type="Self.Event" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="EventType">
-        <PropertyRef Name="event_type" />
+        <PropertyRef Name="event_type_id" />
       </Principal>
       <Dependent Role="Event">
-        <PropertyRef Name="event_type" />
+        <PropertyRef Name="event_type_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -237,7 +237,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="YourPlaceEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="YourPlaceEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Event" EntityType="Self.Event" />
     <EntitySet Name="EventType" EntityType="Self.EventType" />
     <EntitySet Name="Guest" EntityType="Self.Guest" />
