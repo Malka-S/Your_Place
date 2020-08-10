@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class UsersDal
+    public class UsersDal
     {
         public static int UpdateUsers(Users users)
         {
@@ -46,5 +46,5 @@ namespace DAL
     }
 }
 
-    
+
 

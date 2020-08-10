@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common.DTO
 {
-    class UsersDto
+    public class UsersDto
     {
         public int user_id { get; set; }
         public string user_last_name { get; set; }
