@@ -43,6 +43,24 @@ namespace DAL
                 throw;
             }
         }
+        public static int AddUser(Users users)
+        {
+            try
+            {
+                using (YourPlaceEntities db = new YourPlaceEntities())
+                {
+                    var q1 = db.Users.Add(users);
+                    //שמור שינוי
+                    db.SaveChanges();
+                    return 1;//יתכן שנשקול להוסיף את המספור האוטמטי החדש 
+
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
 
