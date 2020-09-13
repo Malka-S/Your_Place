@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DTO\BaseCodeDto.cs" />
+    <Compile Include="DTO\ConfirmParticipationDto.cs" />
     <Compile Include="DTO\EventDto.cs" />
+    <Compile Include="DTO\GuestDto.cs" />
     <Compile Include="DTO\UsersDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
