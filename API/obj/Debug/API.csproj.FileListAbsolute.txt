@@ -283,3 +283,6 @@ D:\user\Desktop\YourPlace\Your_Place\API\obj\Debug\API.csproj.CoreCompileInputs.
 D:\user\Desktop\YourPlace\Your_Place\API\obj\Debug\API.csproj.CopyComplete
 D:\user\Desktop\YourPlace\Your_Place\API\obj\Debug\API.dll
 D:\user\Desktop\YourPlace\Your_Place\API\obj\Debug\API.pdb
+D:\user\Desktop\YourPlace\Your_Place\API\bin\System.Web.Cors.dll
+D:\user\Desktop\YourPlace\Your_Place\API\bin\System.Web.Http.Cors.dll
+D:\user\Desktop\YourPlace\Your_Place\API\bin\System.Web.Http.Cors.xml
