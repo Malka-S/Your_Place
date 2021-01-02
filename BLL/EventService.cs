@@ -13,11 +13,17 @@ namespace BLL
        public static List<Common.DTO.EventDto> GetAllEvents()
         {
             return Converters.EventConverter.ToDtoEventList (DAL.EventDal.SelectEvents());
+        
+        
+        
         }
-
+    //public static List<Common.DTO.BaseCodeDto> GetEventType()
+    //{
+    //  return Converters.EventConverter.ToDtoEventTypeList(DAL.EventDal.SelectEventType());
+    //}
     public static List<Common.DTO.BaseCodeDto> GetEventType()
     {
-      return Converters.EventConverter.ToDtoEventTypeList(DAL.EventDal.SelectEventType());
+      return Converters.EventConverter.ToDtoEventTypeList();
     }
     public static Common.DTO.EventDto SelectEvents(int code)
     {

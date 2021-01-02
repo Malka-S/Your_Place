@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+
 namespace API.Controllers
 
 {
@@ -26,7 +27,7 @@ namespace API.Controllers
         return BadRequest(e.Message);
       }
     }
-
+    [RequireHttps]
     [HttpGet]
     [Route("GetEventType")]
     public IHttpActionResult GetEventType()

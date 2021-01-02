@@ -1,8 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace DAL
 {
@@ -12,20 +16,29 @@ namespace DAL
     {
       using (YourPlaceEntities db = new YourPlaceEntities())
       {
+//Context.Connection.Open();
+       // Content.Connection.Open();
+
         return db.Event.ToList();
       }
     }
+
 
     public static List<EventType> SelectEventType()
     {
       using (YourPlaceEntities db = new YourPlaceEntities())
       {
-        return db.EventType.ToList();
+        //List<EventType> f = new List<EventType>();
+        //f.Add();
+
+
+        List<EventType> f= db.EventType.ToList();
+        return f;
       }
     }
-
     public static Event SalectEvent(int code)
     {
+
       using (YourPlaceEntities db = new YourPlaceEntities())
       {
         return db.Event.FirstOrDefault(e => e.event_id == code);

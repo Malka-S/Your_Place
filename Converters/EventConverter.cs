@@ -45,15 +45,26 @@ namespace Converters
       }
       return le;
     }
+    //public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList(List<DAL.EventType> l)
+    //{
+    //  List<Common.DTO.BaseCodeDto> le = new List<Common.DTO.BaseCodeDto>();
+    //  foreach (var item in l)
+    //  {
+    //    le.Add(ToDtoBaseCode(item.event_type_id, item.event_type_des));
 
-    public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList(List<DAL.EventType> l)
+    //  }
+    //  return le;
+    //}
+    public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList()
     {
+      
       List<Common.DTO.BaseCodeDto> le = new List<Common.DTO.BaseCodeDto>();
-      foreach (var item in l)
-      {
-        le.Add(ToDtoBaseCode(item.event_type_id, item.event_type_des));
-
-      }
+      le.Add(ToDtoBaseCode(1, "חתונה"));
+      le.Add(ToDtoBaseCode(2, "בר מצווה"));
+      le.Add(ToDtoBaseCode(3, "ארוסין"));
+      le.Add(ToDtoBaseCode(4, "בת מצווה"));
+      le.Add(ToDtoBaseCode(5, "ברית"));
+    
       return le;
     }
 
