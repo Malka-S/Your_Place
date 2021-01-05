@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfirmParticipationConverter.cs" />
     <Compile Include="EventConverter.cs" />
+    <Compile Include="GuestConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersConverter.cs" />
   </ItemGroup>

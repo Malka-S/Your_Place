@@ -6,104 +6,106 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-  public class EventDal
-  {
-    public static List<Event> SelectEvents()
+    public class EventDal
     {
-      using (YourPlaceEntities db = new YourPlaceEntities())
-      {
-        return db.Event.ToList();
-      }
-    }
-
-    public static List<EventType> SelectEventType()
-    {
-      using (YourPlaceEntities db = new YourPlaceEntities())
-      {
-        return db.EventType.ToList();
-      }
-    }
-
-    public static Event SalectEvent(int code)
-    {
-      using (YourPlaceEntities db = new YourPlaceEntities())
-      {
-        return db.Event.FirstOrDefault(e => e.event_id == code);
-      }
-    }
-
-    //public static int UpdateEvent(Event event)
-    //{
-    //    try
-    //    {
-    //        using (YourPlaceEntities db = new YourPlaceEntities())
-    //        {
-    //            var q1=db.Event.FirstOrDefault(e => e.event_code==event.event_code);
-    //            if (q1 == null)
-    //                return 0;
-    //            else
-    //            {
-    //                //עדכן
-    //                ////ctx.Workers.Attach(worker);
-    //                // ctx.Entry(worker).State = EntityState.Modified;
-
-    //                q1.event_code = event.event_code;
-
-    //                //שמור שינוי
-    //                return db.SaveChanges();
-
-    //            }
-    //        }
-    //    }
-    //    catch
-    //    {
-    //        throw;
-    //    }
-    //}
-    public static int DeletEvent(int code)
-    {
-      try
-      {
-        using (YourPlaceEntities db = new YourPlaceEntities())
+        public static List<Event> SelectEvents()
         {
-          var q1 = db.Event.FirstOrDefault(e => e.event_id == code);
-          if (q1 == null)
-            return 0;
-          else
-          {
-            //מחק
-            db.Event.Remove(q1);
-            //שמור שינוי
-            db.SaveChanges();
-            //החזר 1
-            return 1;
-          }
+            using (YourPlaceEntities db = new YourPlaceEntities())
+            {
+                return db.Event.ToList();
+            }
         }
-      }
-      catch
-      {
-        throw;
-      }
+
+        public static List<EventType> SelectEventType()
+        {
+            using (YourPlaceEntities db = new YourPlaceEntities())
+            {
+                return db.EventType.ToList();
+            }
+        }
+
+       
+    public static Event SalectEvent(int code)
+        {
+            using (YourPlaceEntities db = new YourPlaceEntities())
+            {
+                return db.Event.FirstOrDefault(e => e.event_id == code);
+            }
+        }
+
+        //public static int UpdateEvent(Event event)
+        //{
+        //    try
+        //    {
+        //        using (YourPlaceEntities db = new YourPlaceEntities())
+        //        {
+        //            var q1=db.Event.FirstOrDefault(e => e.event_code==event.event_code);
+        //            if (q1 == null)
+        //                return 0;
+        //            else
+        //            {
+        //                //עדכן
+        //                ////ctx.Workers.Attach(worker);
+        //                // ctx.Entry(worker).State = EntityState.Modified;
+
+        //                q1.event_code = event.event_code;
+
+        //                //שמור שינוי
+        //                return db.SaveChanges();
+
+        //            }
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        throw;
+        //    }
+        //}
+
+        public static int DeletEvent(int code)
+        {
+            try
+            {
+                using (YourPlaceEntities db = new YourPlaceEntities())
+                {
+                    var q1 = db.Event.FirstOrDefault(e => e.event_id == code);
+                    if (q1 == null)
+                        return 0;
+                    else
+                    {
+                        //מחק
+                        db.Event.Remove(q1);
+                        //שמור שינוי
+                        db.SaveChanges();
+                        //החזר 1
+                        return 1;
+                    }
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        // public static int AddEvent(Event event)
+        // {
+        //     try
+        //     {
+        //         using (YourPlaceEntities db = new YourPlaceEntities())
+        //         {
+        //             var q1 = db.Event.Add(event);
+        //             //שמור שינוי
+        //             db.SaveChanges();
+        //             return 1;//יתכן שנשקול להוסיף את המספור האוטמטי החדש 
+
+        //         }
+        //     }
+        //     catch
+        //     {
+        //         throw;
+        //     }
+        // }
+
     }
-
-    // public static int AddEvent(Event event)
-    // {
-    //     try
-    //     {
-    //         using (YourPlaceEntities db = new YourPlaceEntities())
-    //         {
-    //             var q1 = db.Event.Add(event);
-    //             //שמור שינוי
-    //             db.SaveChanges();
-    //             return 1;//יתכן שנשקול להוסיף את המספור האוטמטי החדש 
-
-    //         }
-    //     }
-    //     catch
-    //     {
-    //         throw;
-    //     }
-    // }
-
-  }
 }
