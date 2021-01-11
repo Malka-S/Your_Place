@@ -32,7 +32,7 @@ namespace DAL
       {
         using (YourPlaceEntities db = new YourPlaceEntities())
         {
-          var q1 = db.Guest.FirstOrDefault(g => g.guest_id == guest.guest_id);
+          var q1 = db.Guest.FirstOrDefault(g=>g.guest_id==guest.guest_id);
           //שמור שינוי
           db.SaveChanges();
           return 1;//יתכן שנשקול להוסיף את המספור האוטמטי החדש 
@@ -43,25 +43,19 @@ namespace DAL
         throw;
       }
     }
-    public static List<Guest> SelectGuestsByCatagory(string category)
+    public static Guest SelectGuestsByCatagory(string category)
     {
 
       using (YourPlaceEntities db = new YourPlaceEntities())
       {
-//        var selectByCatagory =
-//from GuestService in db.Guest 
-
-//join Guest_catagory
-
-//where g.guest_catagory_id = Guest_catagory.guest_catagory_id
-        //  var selectByCatagory=
-        //    from Guest join Guest_catagory
-        //    where Guest.guest_catagory_id equals Guest_catagory.guest_catagory_id
-        //    on Guest_catagory.guest_catagory_description equals catagory;
+      //  var selectByCatagory=
+      //    from Guest join Guest_catagory
+      //    where Guest.guest_catagory_id equals Guest_catagory.guest_catagory_id
+      //    on Guest_catagory.guest_catagory_description equals catagory;
         //מקבלים סוג קטגוריה ואילו בדאטה בייס זה בתור קוד
         // return db.Guest.FirstOrDefault(e => e.guest_catagory_id == category);
-        var g = category;
-        return db.Guest.Where(e => e.Guest_catagory.guest_catagory_des == category).ToList();
+
+        return db.Guest.FirstOrDefault(e => e.guest_catagory_id == 0);
       }
     }
     public static List<Guest> SelectGuests()
@@ -104,4 +98,3 @@ namespace DAL
     }
   }
 }
-

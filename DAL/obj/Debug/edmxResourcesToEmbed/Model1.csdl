@@ -74,16 +74,16 @@
     <NavigationProperty Name="Guest" Relationship="Self.FK__guest_tab__frien__3A81B327" FromRole="guest_table_member" ToRole="Guest" />
     <NavigationProperty Name="Guest1" Relationship="Self.FK__guest_tab__guest__398D8EEE" FromRole="guest_table_member" ToRole="Guest" />
   </EntityType>
-  <!--<EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="Table_category">
     <Key>
       <PropertyRef Name="category_id" />
@@ -244,7 +244,7 @@
     <EntitySet Name="Guest_catagory" EntityType="Self.Guest_catagory" />
     <EntitySet Name="Guest_table" EntityType="Self.Guest_table" />
     <EntitySet Name="guest_table_member" EntityType="Self.guest_table_member" />
-    <!--<EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />-->
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Table_category" EntityType="Self.Table_category" />
     <EntitySet Name="Tables" EntityType="Self.Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" />
