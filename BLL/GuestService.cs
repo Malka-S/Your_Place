@@ -1,3 +1,4 @@
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace BLL
   {
     public static List<Common.DTO.GuestDto> GetAllGuests()
     {
-      return Converters.GuestConverter.ToDtoGuestList(DAL.GuestDal.SelectGuests());
+      return Converters.GuestConverter.ToDtoGuestList(GuestDal.SelectGuests());
     }
     public static List<Common.DTO.GuestDto> GetGuestListByCategory(string category)
     {
-      return Converters.GuestConverter.ToDtoGuestList(DAL.GuestDal.SelectGuestsByCatagory(category));
+      return Converters.GuestConverter.ToDtoGuestList(GuestDal.SelectGuestsByCatagory(category));
     }
     public static int AddGuest(Common.DTO.GuestDto guest)
     {

@@ -72,5 +72,23 @@ namespace API.Controllers
         return BadRequest(e.Message);
       }
     }
+    public IHttpActionResult DeleteGuest(Common.DTO.GuestDto guest)
+    {
+      try
+      {
+        int x = BLL.GuestService.DeleteGuest(guest);
+
+        if (x == 0)
+          return NotFound();
+        else
+          return Ok(x);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+
+
+    }
   }
 }
