@@ -16,26 +16,13 @@ namespace DAL
     {
       using (YourPlaceEntities db = new YourPlaceEntities())
       {
-//Context.Connection.Open();
-       // Content.Connection.Open();
+        //Context.Connection.Open();
+         //Content.Connection.Open();
 
         return db.Event.ToList();
       }
     }
 
-
-    public static List<EventType> SelectEventType()
-    {
-      using (YourPlaceEntities db = new YourPlaceEntities())
-      {
-        //List<EventType> f = new List<EventType>();
-        //f.Add();
-
-
-        List<EventType> f= db.EventType.ToList();
-        return f;
-      }
-    }
     public static Event SalectEvent(int code)
     {
 
@@ -44,6 +31,17 @@ namespace DAL
         return db.Event.FirstOrDefault(e => e.event_id == code);
       }
     }
+    public static List<EventType> SelectEventType()
+    {
+      using (YourPlaceEntities db = new YourPlaceEntities())
+      {
+        //List<EventType> f = new List<EventType>();
+        //f.Add();
+        List<EventType> f = db.EventType.ToList();
+        return f;
+      }
+    }
+   
 
     //public static int UpdateEvent(Event event)
     //{
@@ -73,7 +71,26 @@ namespace DAL
     //        throw;
     //    }
     //}
-    public static int DeletEvent(int code)
+
+//    public static int AddEvent(Event event)
+//    {
+//      try
+//      {
+//        using (YourPlaceEntities db = new YourPlaceEntities())
+//        {
+//          var q1 = db.Event.Add(event);
+//    //שמור שינוי
+//    db.SaveChanges();
+//          return 1;//יתכן שנשקול להוסיף את המספור האוטמטי החדש 
+
+//        }
+//}
+//      catch
+//{
+//  throw;
+//}
+//    }
+    public static int DeleteEvent(int code)
     {
       try
       {
@@ -98,25 +115,5 @@ namespace DAL
         throw;
       }
     }
-
-    // public static int AddEvent(Event event)
-    // {
-    //     try
-    //     {
-    //         using (YourPlaceEntities db = new YourPlaceEntities())
-    //         {
-    //             var q1 = db.Event.Add(event);
-    //             //שמור שינוי
-    //             db.SaveChanges();
-    //             return 1;//יתכן שנשקול להוסיף את המספור האוטמטי החדש 
-
-    //         }
-    //     }
-    //     catch
-    //     {
-    //         throw;
-    //     }
-    // }
-
   }
 }

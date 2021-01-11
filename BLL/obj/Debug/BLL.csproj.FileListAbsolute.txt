@@ -57,3 +57,19 @@ C:\Your Place\Server\Your_Place\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Your Place\Server\Your_Place\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Your Place\Server\Your_Place\BLL\obj\Debug\BLL.dll
 C:\Your Place\Server\Your_Place\BLL\obj\Debug\BLL.pdb
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\BLL.dll
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\BLL.pdb
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\Common.dll
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\Converters.dll
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\DAL.dll
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\Common.pdb
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\Converters.pdb
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\DAL.pdb
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\DAL.dll.config
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\obj\Debug\BLL.dll
+C:\Users\Angular\Desktop\פרויקט\YourPlace\BLL\obj\Debug\BLL.pdb

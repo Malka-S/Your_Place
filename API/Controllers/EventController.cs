@@ -4,13 +4,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using System.Web.Mvc;
 
 namespace API.Controllers
 
 {
   //הגדרה אחת לתחילת הנתיב
-  [RoutePrefix("api/Event")]
+  [System.Web.Http.RoutePrefix("api/Event")]
   public class EventController : ApiController
   {
     public IHttpActionResult GetEvent()
@@ -28,8 +28,8 @@ namespace API.Controllers
       }
     }
     [RequireHttps]
-    [HttpGet]
-    [Route("GetEventType")]
+    [System.Web.Http.HttpGet]
+    [System.Web.Http.Route("GetEventType")]
     public IHttpActionResult GetEventType()
     {
       try
@@ -47,8 +47,8 @@ namespace API.Controllers
 
     //Rout עם פרמטרים
     //יש לכלול פרמטרים בהגדרת הנתיב
-    [HttpGet]
-    [Route("GetByCode")]
+    [System.Web.Http.HttpGet]
+    [System.Web.Http.Route("GetByCode")]
     public IHttpActionResult GetEventByCode(int code)
     {
       var q1 = BLL.EventService.SelectEvents(code);
