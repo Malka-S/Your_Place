@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,6 +46,12 @@ namespace Converters
       }
       return le;
     }
+
+    public static object ToDalInvitation(FileWebRequest file)
+    {
+      throw new NotImplementedException();
+    }
+
     //public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList(List<DAL.EventType> l)
     //{
     //  List<Common.DTO.BaseCodeDto> le = new List<Common.DTO.BaseCodeDto>();
@@ -57,14 +64,14 @@ namespace Converters
     //}
     public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList()
     {
-      
+
       List<Common.DTO.BaseCodeDto> le = new List<Common.DTO.BaseCodeDto>();
       le.Add(ToDtoBaseCode(1, "חתונה"));
       le.Add(ToDtoBaseCode(2, "בר מצווה"));
       le.Add(ToDtoBaseCode(3, "ארוסין"));
       le.Add(ToDtoBaseCode(4, "בת מצווה"));
       le.Add(ToDtoBaseCode(5, "ברית"));
-    
+
       return le;
     }
 

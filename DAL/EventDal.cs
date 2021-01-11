@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.UI.WebControls;
 
 namespace DAL
@@ -16,8 +18,8 @@ namespace DAL
     {
       using (YourPlaceEntities db = new YourPlaceEntities())
       {
-//Context.Connection.Open();
-       // Content.Connection.Open();
+        //Context.Connection.Open();
+        // Content.Connection.Open();
 
         return db.Event.ToList();
       }
@@ -32,7 +34,7 @@ namespace DAL
         //f.Add();
 
 
-        List<EventType> f= db.EventType.ToList();
+        List<EventType> f = db.EventType.ToList();
         return f;
       }
     }
@@ -44,6 +46,38 @@ namespace DAL
         return db.Event.FirstOrDefault(e => e.event_id == code);
       }
     }
+
+
+
+    //public static int UploudInvitation(object p)
+    //{
+    //  using (YourPlaceEntities db = new YourPlaceEntities())
+    //  {
+    //    Event obj = new Event();
+    //    string fileName = null;
+    //    var postedFile = HttpRequest.Files["FileUpload"];
+
+    //    if (p!= null)
+    //    {
+    //      fileName=new String(Path.GetFileNameWithoutExtension(p.))
+    //    }
+        //var q1 = db.Event.FirstOrDefault(e => e.event_code ==event.event_code);
+        //            if (q1 == null)
+        //                return 0;
+        //            else
+        //            {
+        //                //עדכן
+        //                ////ctx.Workers.Attach(worker);
+        //                // ctx.Entry(worker).State = EntityState.Modified;
+
+        //                q1.event_code = event.event_code;
+
+        //                //שמור שינוי
+        //                return db.SaveChanges();
+
+        //            }
+    //  }
+    //}
 
     //public static int UpdateEvent(Event event)
     //{
