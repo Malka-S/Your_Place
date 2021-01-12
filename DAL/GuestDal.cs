@@ -43,7 +43,7 @@ namespace DAL
         throw;
       }
     }
-    public static Guest SelectGuestsByCatagory(string category)
+    public static List<Guest> SelectGuestsByCatagory(string category)
     {
 
       using (YourPlaceEntities db = new YourPlaceEntities())
@@ -55,7 +55,7 @@ namespace DAL
         //מקבלים סוג קטגוריה ואילו בדאטה בייס זה בתור קוד
         // return db.Guest.FirstOrDefault(e => e.guest_catagory_id == category);
 
-        return db.Guest.FirstOrDefault(e => e.guest_catagory_id == 0);
+        return db.Guest.Where(e => e.Guest_catagory.guest_catagory_des == category).ToList();
       }
     }
     public static List<Guest> SelectGuests()
