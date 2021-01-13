@@ -12,10 +12,10 @@ namespace BLL
     {
       return Converters.GuestConverter.ToDtoGuestList(DAL.GuestDal.SelectGuests());
     }
-    public static List<Common.DTO.GuestDto> GetGuestListByCategory(string category)
-    {
-      return Converters.GuestConverter.ToDtoGuestList(DAL.GuestDal.SelectGuestsByCatagory(category));
-    }
+    //public static List<Common.DTO.GuestDto> GetGuestListByCategory(string category)
+    //{
+    //  return Converters.GuestConverter.ToDtoGuestList(DAL.GuestDal.SelectGuestsByCatagory(category));
+    //}
     public static int AddGuest(Common.DTO.GuestDto guest)
     {
       try

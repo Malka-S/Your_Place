@@ -29,17 +29,17 @@ namespace BLL
       return Converters.EventConverter.ToDtoEvent(DAL.EventDal.SalectEvent(code));
     }
 
-    public static int DeleteEventByCode(int code)
-    {
-      try
-      {
-        return DAL.EventDal.DeleteEvent(code);
-      }
-      catch
-      {
-        throw;
-      }
-    }
+    //public static int DeleteEventByCode(int code)
+    //{
+    //  try
+    //  {
+    //    return DAL.EventDal.DeleteEvent(code);
+    //  }
+    //  catch
+    //  {
+    //    throw;
+    //  }
+    //}
     //public static int UpdateEvent(Common.DTO.EventDto event)
     //{
     //    try

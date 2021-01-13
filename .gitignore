@@ -44,3 +44,14 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+*.dll
+*.pdb
+/bin
+
+/Debug
+
+/BLL/bin/Debug
+/API/obj/Debug
+/BLL/obj/Debug
+/API/bin

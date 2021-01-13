@@ -45,10 +45,10 @@ namespace API.Controllers
         return BadRequest(e.Message);
       }
     }
+    
     [RequireHttps]
-    [HttpPost]
-    [Route("UploadJsonFile")]
-
+    [System.Web.Http.HttpPost]
+    [System.Web.Http.Route("UploadJsonFile")]
     public HttpResponseMessage UploadJsonFile()
     {
       HttpResponseMessage response = new HttpResponseMessage();
@@ -130,31 +130,31 @@ namespace API.Controllers
     //    return BadRequest(e.Message);
     //  }
     //}
-    //מחיקה
-    //.../api/Event/1016
-    public IHttpActionResult DeleteEventByCode(int code)
-    {
-      //מה אנחנו צריכות לעשות עכשיחו
-      //1.bl שתקרא לפונקציה בwebapi  להוסיף פונקציה ב
-      //2.dal שתקרא לפונקציה ב bl להוסיף פונקציה ב
-      //3. Dal להוסיף פונקציה ב
-      try
-      {
-        int x = BLL.EventService.DeleteEventByCode(code);
+    ////מחיקה
+    ////.../api/Event/1016
+    //public IHttpActionResult DeleteEventByCode(int code)
+    //{
+    //  //מה אנחנו צריכות לעשות עכשיחו
+    //  //1.bl שתקרא לפונקציה בwebapi  להוסיף פונקציה ב
+    //  //2.dal שתקרא לפונקציה ב bl להוסיף פונקציה ב
+    //  //3. Dal להוסיף פונקציה ב
+    //  try
+    //  {
+    //    int x = BLL.EventService.DeleteEventByCode(code);
 
-        if (x == 0)
-          return NotFound();
-        else
-          return Ok(x);
-      }
-      catch (Exception e)
-      {
-        //שקרא לה תפס אותה וגם הוא זרק אותהbll היא נזרקה ואז הdal במקרה שגיאה ב
-        //תפס את השגיאה והוא מעביר את טקסט השגיאה ללקוחbll שהפעיל את הwebapi ה
-        //האנגולר יוכל לראות שחזר שגיאה ומה הייתה השגיאה 
-        return BadRequest(e.Message);
-      }
-    }
+    //    if (x == 0)
+    //      return NotFound();
+    //    else
+    //      return Ok(x);
+    //  }
+    //  catch (Exception e)
+    //  {
+    //    //שקרא לה תפס אותה וגם הוא זרק אותהbll היא נזרקה ואז הdal במקרה שגיאה ב
+    //    //תפס את השגיאה והוא מעביר את טקסט השגיאה ללקוחbll שהפעיל את הwebapi ה
+    //    //האנגולר יוכל לראות שחזר שגיאה ומה הייתה השגיאה 
+    //    return BadRequest(e.Message);
+    //  }
+    //}
 
     //public IHttpActionResult PutEvent(Common.DTO.EventDto event)
     //{

@@ -26,20 +26,20 @@ namespace API.Controllers
         return BadRequest(e.Message);
       }
     }
-    public IHttpActionResult GetGuestsByCategory(string category)
-    {
-      try
-      {
-        var q = BLL.GuestService.GetGuestListByCategory(category);
-        if (q != null)
-          return Ok(q);
-        return NotFound();
-      }
-      catch (Exception e)
-      {
-        return BadRequest(e.Message);
-      }
-    }
+    //public IHttpActionResult GetGuestsByCategory(string category)
+    //{
+    //  try
+    //  {
+    //    var q = BLL.GuestService.GetGuestListByCategory(category);
+    //    if (q != null)
+    //      return Ok(q);
+    //    return NotFound();
+    //  }
+    //  catch (Exception e)
+    //  {
+    //    return BadRequest(e.Message);
+    //  }
+    //}
     //add
     public IHttpActionResult PutGuest(Common.DTO.GuestDto guest)
     {
