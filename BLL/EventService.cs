@@ -13,10 +13,8 @@ namespace BLL
     {
        public static List<Common.DTO.EventDto> GetAllEvents()
         {
-            return Converters.EventConverter.ToDtoEventList (DAL.EventDal.SelectEvents());
-        
-        
-        
+            return Converters.EventConverter.ToDtoEventList(DAL.EventDal.SelectEvents());
+            
         }
     //public static List<Common.DTO.BaseCodeDto> GetEventType()
     //{
@@ -35,7 +33,7 @@ namespace BLL
     {
       try
       {
-        return DAL.EventDal.DeletEvent(code);
+        return DAL.EventDal.DeleteEvent(code);
       }
       catch
       {
