@@ -48,13 +48,6 @@ namespace DAL
 
       using (YourPlaceEntities db = new YourPlaceEntities())
       {
-      //  var selectByCatagory=
-      //    from Guest join Guest_catagory
-      //    where Guest.guest_catagory_id equals Guest_catagory.guest_catagory_id
-      //    on Guest_catagory.guest_catagory_description equals catagory;
-        //מקבלים סוג קטגוריה ואילו בדאטה בייס זה בתור קוד
-        // return db.Guest.FirstOrDefault(e => e.guest_catagory_id == category);
-
         return db.Guest.Where(e => e.Guest_catagory.guest_catagory_des == category).ToList();
       }
     }

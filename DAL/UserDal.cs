@@ -14,7 +14,6 @@ namespace DAL
       {
         //Context.Connection.Open();
         // Content.Connection.Open();
-
         return db.Users.ToList();
       }
     }
@@ -36,14 +35,12 @@ namespace DAL
         throw;
       }
     }
-    public static string SalectUser(string mail)
+    public static Users SalectUser(string mail)
     {
 
       using (YourPlaceEntities db = new YourPlaceEntities())
       {
-        //לא מכיר את USERS
-        // return db.Users.FirstOrDefault(u => u.user_email == mail);
-        return "567";
+        return db.Users.FirstOrDefault(u => u.user_email == mail);
       }
     }
     public static int AddUser(Users user)

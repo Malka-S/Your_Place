@@ -3,29 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Common;
 using Common.DTO;
-
+using DAL;
 namespace BLL
 {
     public class EventService
     {
-       public static List<Common.DTO.EventDto> GetAllEvents()
+       public static List<EventDto> GetAllEvents()
         {
-            return Converters.EventConverter.ToDtoEventList(DAL.EventDal.SelectEvents());
+            return Converters.EventConverter.ToDtoEventList(EventDal.SelectEvents());
             
         }
     //public static List<Common.DTO.BaseCodeDto> GetEventType()
     //{
-    //  return Converters.EventConverter.ToDtoEventTypeList(DAL.EventDal.SelectEventType());
+    //  return Converters.EventConverter.ToDtoEventTypeList(EventDal.SelectEventType());
     //}
-    public static List<Common.DTO.BaseCodeDto> GetEventType()
+    public static List<BaseCodeDto> GetEventType()
     {
       return Converters.EventConverter.ToDtoEventTypeList();
     }
-    public static Common.DTO.EventDto SelectEvents(int code)
+    public static EventDto SelectEvents(int code)
     {
-      return Converters.EventConverter.ToDtoEvent(DAL.EventDal.SalectEvent(code));
+      return Converters.EventConverter.ToDtoEvent(EventDal.SalectEvent(code));
     }
 
     public static int DeleteEventByCode(int code)

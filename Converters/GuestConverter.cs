@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Common.DTO;
+using DAL;
 namespace Converters
 {
   public class GuestConverter
   {
-    public static DAL.Guest ToDalGuest(Common.DTO.GuestDto g)
+    public static Guest ToDalGuest(GuestDto g)
     {
-      DAL.Guest gu = new DAL.Guest();
+      Guest gu = new Guest();
       gu.guest_id = g.guest_id;
       gu.guest_first_name = g.guest_first_name;
       gu.guest_last_name = g.guest_last_name;
@@ -19,9 +20,9 @@ namespace Converters
       ///....
       return gu;
     }
-    public static Common.DTO.GuestDto ToDtoGuest(DAL.Guest g)
+    public static GuestDto ToDtoGuest(Guest g)
     {
-      Common.DTO.GuestDto gu = new Common.DTO.GuestDto();
+      GuestDto gu = new GuestDto();
       gu.guest_id = g.guest_id;
       gu.guest_first_name = g.guest_first_name;
       gu.guest_last_name = g.guest_last_name;
@@ -31,9 +32,9 @@ namespace Converters
       return gu;
 
     }
-    public static List<DAL.Guest> ToDalGuestList(List<Common.DTO.GuestDto> l)
+    public static List<Guest> ToDalGuestList(List<GuestDto> l)
     {
-      List<DAL.Guest> le = new List<DAL.Guest>();
+      List<Guest> le = new List<Guest>();
       foreach (var item in l)
       {
         le.Add(ToDalGuest(item));
@@ -41,9 +42,9 @@ namespace Converters
       return le;
     }
 
-    public static List<Common.DTO.GuestDto> ToDtoGuestList(List<DAL.Guest> l)
+    public static List<GuestDto> ToDtoGuestList(List<Guest> l)
     {
-      List<Common.DTO.GuestDto> le = new List<Common.DTO.GuestDto>();
+      List<GuestDto> le = new List<GuestDto>();
       foreach (var item in l)
       {
         le.Add(ToDtoGuest(item));

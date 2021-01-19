@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Common.DTO;
+using BLL;
 
 namespace API.Controllers
 {
@@ -16,7 +18,7 @@ namespace API.Controllers
     {
       try
       {
-        var q = BLL.GuestService.GetAllGuests();
+        var q = GuestService.GetAllGuests();
         if (q != null)
           return Ok(q);
         return NotFound();
@@ -30,7 +32,7 @@ namespace API.Controllers
     {
       try
       {
-        var q = BLL.GuestService.GetGuestListByCategory(category);
+        var q = GuestService.GetGuestListByCategory(category);
         if (q != null)
           return Ok(q);
         return NotFound();
@@ -41,11 +43,11 @@ namespace API.Controllers
       }
     }
     //add
-    public IHttpActionResult PutGuest(Common.DTO.GuestDto guest)
+    public IHttpActionResult PutGuest(GuestDto guest)
     {
       try
       {
-        var q = BLL.GuestService.AddGuest(guest);
+        var q = GuestService.AddGuest(guest);
         //if (q == null)
         //  return NotFound();
         return Ok(q);
@@ -56,16 +58,29 @@ namespace API.Controllers
       }
     }
     //update
-    public IHttpActionResult PostGuest(Common.DTO.GuestDto guest)
+    public IHttpActionResult PostGuest(GuestDto guest)
     {
       try
       {
-        int x = BLL.GuestService.UpdateGuest(guest);
+        int x = GuestService.UpdateGuest(guest);
 
         if (x == 0)
           return NotFound();
         else
           return Ok(x);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+    //אולי כדאי לפתוח קונטרולר נפרד
+    public IHttpActionResult SendMail(string a, string b)
+    {
+      try
+      {
+        PlacementService.sendmail(a, b);
+        return Ok();
       }
       catch (Exception e)
       {

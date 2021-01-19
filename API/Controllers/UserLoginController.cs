@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BLL;
+using Common.DTO;
 //using System.Web.Mvc;
 
 namespace API.Controllers
@@ -17,7 +19,8 @@ namespace API.Controllers
     {
       try
       {
-        var q = BLL.UserService.GetUserByEmail(userEmail);
+        //כל צורה בה אני יגדיר את הפונקציה השניה זה יהיה לא תקין
+        var q= UserService.GetUserByEmail(userEmail);
         if (q != null)
           return Ok(q);
         return NotFound();
@@ -34,7 +37,7 @@ namespace API.Controllers
     {
       try
       {
-        var q = BLL.UserService.GetAllUsers();
+        var q = UserService.GetAllUsers();
         if (q != null)
           return Ok(q);
         return NotFound();
@@ -44,11 +47,11 @@ namespace API.Controllers
         return BadRequest(e.Message);
       }
     }
-    public IHttpActionResult PutUser(Common.DTO.UserDto user)
+    public IHttpActionResult PutUser(UserDto user)
     {
       try
       {
-        var q = BLL.UserService.AddUser(user);
+        var q = UserService.AddUser(user);
         //if (q == null)
         //  return NotFound();
         return Ok(q);

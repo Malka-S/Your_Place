@@ -3,34 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common.DTO;
+using DAL;
+using Converters;
+
 
 namespace BLL
 {
   public class UserService
   {
 
-    public static List<Common.DTO.UserDto> GetAllUsers()
+    public static List<UserDto> GetAllUsers()
     {
-      return Converters.UserConverter.ToDtoUserList(DAL.UserDal.SelectUsers());
+      return
+        UserConverter.ToDtoUserList(UserDal.SelectUsers());
     }
-
-    public static string GetUserByEmail(string mail)
+    //איזה סוג הפונקציה מחזירה?
+    public static Users GetUserByEmail(string mail)
     {
       try
       {
-        return DAL.UserDal.SalectUser(mail);
-
+        return UserDal.SalectUser(mail);
       }
       catch (Exception e)
       {
         throw e;
       }
     }
-    public static int AddUser(Common.DTO.UserDto user)
+    public static int AddUser(UserDto user)
     {
       try
       {
-        return DAL.UserDal.AddUser(Converters.UserConverter.ToDalUser(user));
+        return UserDal.AddUser(UserConverter.ToDalUser(user));
       }
       catch (Exception e)
       {

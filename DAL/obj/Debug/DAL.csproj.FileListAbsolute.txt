@@ -50,3 +50,4 @@ C:\Users\Angular\Desktop\פרויקט\YourPlace\DAL\obj\Debug\DAL.csproj.CoreCom
 C:\Users\Angular\Desktop\פרויקט\YourPlace\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Angular\Desktop\פרויקט\YourPlace\DAL\obj\Debug\DAL.dll
 C:\Users\Angular\Desktop\פרויקט\YourPlace\DAL\obj\Debug\DAL.pdb
+C:\Users\Angular\Desktop\פרויקט\YourPlace\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

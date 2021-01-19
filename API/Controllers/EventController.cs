@@ -85,24 +85,24 @@ namespace API.Controllers
 
     }
 
-    //public IHttpActionResult PutEvent(Common.DTO.EventDto event)
-    //{
-    //    try
-    //    {
-    //        int x = BLL.EventService.AddEvent(event);
-    //        if (x == 0)
-    //            return NotFound();
-    //        else
-    //            return Ok(x);
-    //    }
-    //    catch (Exception e)
-    //    {
-    //        //שקרא לה תפס אותה וגם הוא זרק אותהbll היא נזרקה ואז הdal במקרה שגיאה ב
-    //        //תפס את השגיאה והוא מעביר את טקסט השגיאה ללקוחbll שהפעיל את הwebapi ה
-    //        //האנגולר יוכל לראות שחזר שגיאה ומה הייתה השגיאה 
-    //        return BadRequest(e.Message);
-    //    }
-    //}
+//    public IHttpActionResult PutEvent(Common.DTO.EventDto event)
+//    {
+//      try
+//      {
+//        int x = BLL.EventService.AddEvent(event);
+//            if (x == 0)
+//                return NotFound();
+//            else
+//                return Ok(x);
+//  }
+//        catch (Exception e)
+//        {
+//            //שקרא לה תפס אותה וגם הוא זרק אותהbll היא נזרקה ואז הdal במקרה שגיאה ב
+//            //תפס את השגיאה והוא מעביר את טקסט השגיאה ללקוחbll שהפעיל את הwebapi ה
+//            //האנגולר יוכל לראות שחזר שגיאה ומה הייתה השגיאה 
+//            return BadRequest(e.Message);
+//}
+//    }
 
     //public IHttpActionResult PostEvent(Common.DTO.EventDto event)
     //{
