@@ -13,6 +13,11 @@ namespace Converters
       DAL.Event ev = new DAL.Event();
       ev.event_id = e.event_id;
       ev.invitation_file = e.invitation_file;
+      ev.event_type_id = e.event_type_id;
+      ev.event_date = e.event_date;
+      ev.event_des = e.event_des;
+      ev.user_id = e.user_id;
+      ev.due_date = e.due_date;
       ///....
       return ev;
     }
@@ -45,28 +50,28 @@ namespace Converters
       }
       return le;
     }
-    //public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList(List<DAL.EventType> l)
-    //{
-    //  List<Common.DTO.BaseCodeDto> le = new List<Common.DTO.BaseCodeDto>();
-    //  foreach (var item in l)
-    //  {
-    //    le.Add(ToDtoBaseCode(item.event_type_id, item.event_type_des));
-
-    //  }
-    //  return le;
-    //}
-    public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList()
+    public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList(List<DAL.EventType> l)
     {
-      
       List<Common.DTO.BaseCodeDto> le = new List<Common.DTO.BaseCodeDto>();
-      le.Add(ToDtoBaseCode(1, "חתונה"));
-      le.Add(ToDtoBaseCode(2, "בר מצווה"));
-      le.Add(ToDtoBaseCode(3, "ארוסין"));
-      le.Add(ToDtoBaseCode(4, "בת מצווה"));
-      le.Add(ToDtoBaseCode(5, "ברית"));
-    
+      foreach (var item in l)
+      {
+        le.Add(ToDtoBaseCode(item.event_type_id, item.event_type_des));
+
+      }
       return le;
     }
+    //public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList()
+    //{
+      
+    //  List<Common.DTO.BaseCodeDto> le = new List<Common.DTO.BaseCodeDto>();
+    //  le.Add(ToDtoBaseCode(1, "חתונה"));
+    //  le.Add(ToDtoBaseCode(2, "בר מצווה"));
+    //  le.Add(ToDtoBaseCode(3, "ארוסין"));
+    //  le.Add(ToDtoBaseCode(4, "בת מצווה"));
+    //  le.Add(ToDtoBaseCode(5, "ברית"));
+    
+    //  return le;
+    //}
 
     public static Common.DTO.BaseCodeDto ToDtoBaseCode(int id, string des)
     {

@@ -15,14 +15,14 @@ namespace BLL
             return Converters.EventConverter.ToDtoEventList(DAL.EventDal.SelectEvents());
             
         }
-    //public static List<Common.DTO.BaseCodeDto> GetEventType()
-    //{
-    //  return Converters.EventConverter.ToDtoEventTypeList(DAL.EventDal.SelectEventType());
-    //}
     public static List<Common.DTO.BaseCodeDto> GetEventType()
     {
-      return Converters.EventConverter.ToDtoEventTypeList();
+      return Converters.EventConverter.ToDtoEventTypeList(DAL.EventDal.SelectEventType());
     }
+    //public static List<Common.DTO.BaseCodeDto> GetEventType()
+    //{
+    //  return Converters.EventConverter.ToDtoEventTypeList();
+    //}
     public static Common.DTO.EventDto SelectEvents(int code)
     {
       return Converters.EventConverter.ToDtoEvent(DAL.EventDal.SalectEvent(code));
@@ -40,18 +40,18 @@ namespace BLL
       }
     }
 
-    //public static int UpdateEvent(Common.DTO.EventDto event)
-    //{
-    //    try
-    //    {
-    //        return DAL.EventDal.UpdateEvent(Converters.EventConverter.ToDalEvent(event));
-    //    }
-    //    catch (Exception e)
-    //    {
+    public static int UpdateEvent(Common.DTO.EventDto event1)
+    {
+      try
+      {
+        return DAL.EventDal.UpdateEvent(Converters.EventConverter.ToDalEvent(event1));
+      }
+      catch (Exception e)
+      {
 
-    //        throw;
-    //    }
-    //}
+        throw e;
+      }
+    }
 
     //public static int AddEvent(Common.DTO.EventDto event)
     //{

@@ -22,6 +22,22 @@ namespace DAL
         return db.Event.ToList();
       }
     }
+    public static int UpdateEvent(Event event1)
+    {
+      try
+      {
+        using (YourPlaceEntities db = new YourPlaceEntities())
+        {
+          var q1 = db.Event.FirstOrDefault(e => e.event_id == event1.event_id);
+          db.SaveChanges();
+          return 1;
+        }
+      }
+      catch
+      {
+        throw;
+      }
+    }
 
     public static Event SalectEvent(int code)
     {
