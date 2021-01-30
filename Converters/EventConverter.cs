@@ -3,31 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Common.DTO;
-using DAL;
+
 namespace Converters
 {
   public class EventConverter
   {
-    public static Event ToDalEvent(EventDto e)
+    public static DAL.Event ToDalEvent(Common.DTO.EventDto e)
     {
-      Event ev = new Event();
+      DAL.Event ev = new DAL.Event();
       ev.event_id = e.event_id;
       ev.invitation_file = e.invitation_file;
+      ev.event_type_id = e.event_type_id;
+      ev.event_date = e.event_date;
+      ev.event_des = e.event_des;
+      ev.user_id = e.user_id;
+      ev.due_date = e.due_date;
       ///....
       return ev;
     }
-    public static EventDto ToDtoEvent(Event e)
+    public static Common.DTO.EventDto ToDtoEvent(DAL.Event e)
     {
-      EventDto ev = new EventDto();
+      Common.DTO.EventDto ev = new Common.DTO.EventDto();
       ev.event_id = e.event_id;
       ev.invitation_file = e.invitation_file;
       return ev;
 
     }
-    public static List<Event> ToDalEventList(List<EventDto> l)
+    public static List<DAL.Event> ToDalEventList(List<Common.DTO.EventDto> l)
     {
-      List<Event> le = new List<Event>();
+      List<DAL.Event> le = new List<DAL.Event>();
       foreach (var item in l)
       {
         le.Add(ToDalEvent(item));
@@ -36,9 +40,9 @@ namespace Converters
       return le;
     }
 
-    public static List<EventDto> ToDtoEventList(List<Event> l)
+    public static List<Common.DTO.EventDto> ToDtoEventList(List<DAL.Event> l)
     {
-      List<EventDto> le = new List<EventDto>();
+      List<Common.DTO.EventDto> le = new List<Common.DTO.EventDto>();
       foreach (var item in l)
       {
         le.Add(ToDtoEvent(item));
@@ -46,32 +50,32 @@ namespace Converters
       }
       return le;
     }
-    //public static List<BaseCodeDto> ToDtoEventTypeList(List<EventType> l)
-    //{
-    //  List<BaseCodeDto> le = new List<BaseCodeDto>();
-    //  foreach (var item in l)
-    //  {
-    //    le.Add(ToDtoBaseCode(item.event_type_id, item.event_type_des));
-
-    //  }
-    //  return le;
-    //}
-    public static List<BaseCodeDto> ToDtoEventTypeList()
+    public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList(List<DAL.EventType> l)
     {
-      
-      List<BaseCodeDto> le = new List<BaseCodeDto>();
-      le.Add(ToDtoBaseCode(1, "חתונה"));
-      le.Add(ToDtoBaseCode(2, "בר מצווה"));
-      le.Add(ToDtoBaseCode(3, "ארוסין"));
-      le.Add(ToDtoBaseCode(4, "בת מצווה"));
-      le.Add(ToDtoBaseCode(5, "ברית"));
-    
+      List<Common.DTO.BaseCodeDto> le = new List<Common.DTO.BaseCodeDto>();
+      foreach (var item in l)
+      {
+        le.Add(ToDtoBaseCode(item.event_type_id, item.event_type_des));
+
+      }
       return le;
     }
+    //public static List<Common.DTO.BaseCodeDto> ToDtoEventTypeList()
+    //{
+      
+    //  List<Common.DTO.BaseCodeDto> le = new List<Common.DTO.BaseCodeDto>();
+    //  le.Add(ToDtoBaseCode(1, "חתונה"));
+    //  le.Add(ToDtoBaseCode(2, "בר מצווה"));
+    //  le.Add(ToDtoBaseCode(3, "ארוסין"));
+    //  le.Add(ToDtoBaseCode(4, "בת מצווה"));
+    //  le.Add(ToDtoBaseCode(5, "ברית"));
+    
+    //  return le;
+    //}
 
-    public static BaseCodeDto ToDtoBaseCode(int id, string des)
+    public static Common.DTO.BaseCodeDto ToDtoBaseCode(int id, string des)
     {
-      BaseCodeDto bc = new BaseCodeDto();
+      Common.DTO.BaseCodeDto bc = new Common.DTO.BaseCodeDto();
       bc.Id = id;
       bc.Des = des;
       return bc;
