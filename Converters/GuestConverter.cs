@@ -1,3 +1,5 @@
+using Common.DTO;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +51,24 @@ namespace Converters
         le.Add(ToDtoGuest(item));
       }
       return le;
+    }
+
+    public static List<BaseCodeDto> ToDtoCatagoryList(List<Guest_catagory> l)
+    {
+      List<BaseCodeDto> le = new List<BaseCodeDto>();
+      foreach (var item in l)
+      {
+        le.Add(ToDtoBaseCode(item.guest_catagory_id, item.guest_catagory_des));
+
+      }
+      return le;
+    }
+    public static BaseCodeDto ToDtoBaseCode(int id, string des)
+    {
+      BaseCodeDto bc = new BaseCodeDto();
+      bc.Id = id;
+      bc.Des = des;
+      return bc;
     }
   }
 }

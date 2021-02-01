@@ -16,6 +16,11 @@ namespace BLL
     {
       return Converters.GuestConverter.ToDtoGuestList(DAL.GuestDal.SelectGuestsByCatagory(category));
     }
+
+    public static List<Common.DTO.BaseCodeDto> GetCatagoryList()
+    {
+      return Converters.GuestConverter.ToDtoCatagoryList(DAL.GuestDal.SelectCatagoryList());
+    }
     public static int AddGuest(Common.DTO.GuestDto guest)
     {
       try

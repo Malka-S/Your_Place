@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace API.Controllers
 {
@@ -11,6 +12,23 @@ namespace API.Controllers
 
   public class GuestController : ApiController
   {
+    [RequireHttps]
+    [System.Web.Http.HttpGet]
+    [System.Web.Http.Route("GetCatagoryList")]
+    public IHttpActionResult GetCatagoryList()
+    {
+      try
+      {
+        var q = BLL.GuestService.GetCatagoryList();
+        if (q != null)
+          return Ok(q);
+        return NotFound();
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
 
     public IHttpActionResult GetGuestList()
     {

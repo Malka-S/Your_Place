@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
@@ -16,6 +16,8 @@
           <Property Name="user_id" Type="int" />
           <Property Name="invitation_file" Type="varchar" MaxLength="50" />
           <Property Name="due_date" Type="datetime" Nullable="false" />
+          <Property Name="num_tables" Type="int" />
+          <Property Name="num_places_around_a_table" Type="int" />
         </EntityType>
         <EntityType Name="EventType">
           <Key>
@@ -281,6 +283,8 @@
           <NavigationProperty Name="EventType" Relationship="Self.FK__Event__event_typ__32E0915F" FromRole="Event" ToRole="EventType" />
           <NavigationProperty Name="Users" Relationship="Self.FK__Event__user_id__33D4B598" FromRole="Event" ToRole="Users" />
           <NavigationProperty Name="Guest" Relationship="Self.FK__Guest__event_id__36B12243" FromRole="Event" ToRole="Guest" />
+          <Property Name="num_tables" Type="Int32" />
+          <Property Name="num_places_around_a_table" Type="Int32" />
         </EntityType>
         <EntityType Name="EventType">
           <Key>
@@ -565,6 +569,8 @@
           <EntitySetMapping Name="Event">
             <EntityTypeMapping TypeName="YourPlaceModel.Event">
               <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="num_places_around_a_table" ColumnName="num_places_around_a_table" />
+                <ScalarProperty Name="num_tables" ColumnName="num_tables" />
                 <ScalarProperty Name="event_id" ColumnName="event_id" />
                 <ScalarProperty Name="event_type_id" ColumnName="event_type_id" />
                 <ScalarProperty Name="event_des" ColumnName="event_des" />

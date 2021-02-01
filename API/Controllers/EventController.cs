@@ -7,10 +7,13 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web;
+using Common.DTO;
+using Newtonsoft.Json;
 
 namespace API.Controllers
-
 {
+
+
   //הגדרה אחת לתחילת הנתיב
   [System.Web.Http.RoutePrefix("api/Event")]
   public class EventController : ApiController
@@ -108,31 +111,37 @@ namespace API.Controllers
 
     }
 
-    //public IHttpActionResult PutEvent(Common.DTO.EventDto event)
-    //{
-    //    try
-    //    {
-    //        int x = BLL.EventService.AddEvent(event);
-    //        if (x == 0)
-    //            return NotFound();
-    //        else
-    //            return Ok(x);
-    //    }
-    //    catch (Exception e)
-    //    {
-    //        //שקרא לה תפס אותה וגם הוא זרק אותהbll היא נזרקה ואז הdal במקרה שגיאה ב
-    //        //תפס את השגיאה והוא מעביר את טקסט השגיאה ללקוחbll שהפעיל את הwebapi ה
-    //        //האנגולר יוכל לראות שחזר שגיאה ומה הייתה השגיאה 
-    //        return BadRequest(e.Message);
-    //    }
-    //}
-
-    public IHttpActionResult PostEvent(Common.DTO.EventDto event1)
+    [RequireHttps]
+    [System.Web.Http.HttpPost]
+    [System.Web.Http.Route("PostCategoryiesList")]
+    public IHttpActionResult PostCategoryiesList(List<BaseCodeDto> CategoryiesList)
     {
       try
       {
-        int x = BLL.EventService.UpdateEvent(event1);
+        int x = BLL.EventService.updateCategoryiesList(CategoryiesList);
+            if (x == 0)
+                return NotFound();
+            else
+                return Ok(x);
+  }
+        catch (Exception e)
+        {
+            //שקרא לה תפס אותה וגם הוא זרק אותהbll היא נזרקה ואז הdal במקרה שגיאה ב
+            //תפס את השגיאה והוא מעביר את טקסט השגיאה ללקוחbll שהפעיל את הwebapi ה
+            //האנגולר יוכל לראות שחזר שגיאה ומה הייתה השגיאה 
+            return BadRequest(e.Message);
+}
+    }
 
+    [RequireHttps]
+    [System.Web.Http.HttpPost]
+    [System.Web.Http.Route("PostEvent")]
+    public IHttpActionResult PostEvent([FromBody]EventDto request)
+    {
+      try
+      {
+
+        int x = BLL.EventService.UpdateEvent(request);
         if (x == 0)
           return NotFound();
         else
@@ -147,5 +156,12 @@ namespace API.Controllers
       }
 
     }
+    //[RequireHttps]
+    //[System.Web.Http.HttpPost]
+    //[System.Web.Http.Route("PostEvent")]
+    //public HttpResponseMessage Post(EventDto model)
+    //{
+    //  return Request.CreateResponse<string>(HttpStatusCode.OK, "Value Recieved: " + model.event_date);
+    //}
   }
 }

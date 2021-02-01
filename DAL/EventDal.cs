@@ -39,12 +39,33 @@ namespace DAL
       }
     }
 
+   
     public static Event SalectEvent(int code)
     {
 
       using (YourPlaceEntities db = new YourPlaceEntities())
       {
         return db.Event.FirstOrDefault(e => e.event_id == code);
+      }
+    }
+
+    public static int UpdateCategoryiesList(List<Guest_catagory> CategoryiesList)
+    {
+      try
+      {
+        using (YourPlaceEntities db = new YourPlaceEntities())
+        {
+          foreach (var item in CategoryiesList)
+          {
+            db.Guest_catagory.Add(item);
+          }
+          db.SaveChanges();
+          return 1;
+        }
+      }
+      catch
+      {
+        throw;
       }
     }
     public static List<EventType> SelectEventType()
