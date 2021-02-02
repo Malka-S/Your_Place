@@ -40,7 +40,19 @@ namespace BLL
       }
     }
 
-    public static int UpdateEvent(Common.DTO.EventDto event1)
+    public static int updateCategoryiesList(List<BaseCodeDto> CategoryiesList)
+    {
+      try
+      {
+        return DAL.EventDal.UpdateCategoryiesList(Converters.EventConverter.ToDalCategoryiesList(CategoryiesList));
+      }
+      catch (Exception e)
+      {
+
+        throw e;
+      }
+    }
+    public static int UpdateEvent(EventDto event1)
     {
       try
       {
@@ -52,6 +64,18 @@ namespace BLL
         throw e;
       }
     }
+    //public static int UpdateEvent(Common.DTO.EventDto event1)
+    //{
+    //  try
+    //  {
+    //    return DAL.EventDal.UpdateEvent(Converters.EventConverter.ToDalEvent(event1));
+    //  }
+    //  catch (Exception e)
+    //  {
+
+    //    throw e;
+    //  }
+    //}
 
     //public static int AddEvent(Common.DTO.EventDto event)
     //{

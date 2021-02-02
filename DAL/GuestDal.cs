@@ -62,6 +62,16 @@ namespace DAL
       }
     }
 
+    public static List<Guest_catagory> SelectCatagoryList()
+    {
+      using (YourPlaceEntities db = new YourPlaceEntities())
+      {
+        //List<EventType> f = new List<EventType>();
+        //f.Add();
+        List<Guest_catagory> f = db.Guest_catagory.ToList();
+        return f;
+      }
+    }
     public static int DeleteGuest(Guest guest)
     {
       try

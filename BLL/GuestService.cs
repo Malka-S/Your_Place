@@ -3,31 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Common.DTO;
-using DAL;
-using Converters;
-
 
 namespace BLL
 {
   public class GuestService
   {
-    public static List<GuestDto> GetAllGuests()
+    public static List<Common.DTO.GuestDto> GetAllGuests()
     {
-      return
-        GuestConverter.ToDtoGuestList(GuestDal.SelectGuests());
+      return Converters.GuestConverter.ToDtoGuestList(DAL.GuestDal.SelectGuests());
     }
-    public static List<GuestDto> GetGuestListByCategory(string category)
+    public static List<Common.DTO.GuestDto> GetGuestListByCategory(string category)
     {
-      return
-        GuestConverter.ToDtoGuestList(GuestDal.SelectGuestsByCatagory(category));
+      return Converters.GuestConverter.ToDtoGuestList(DAL.GuestDal.SelectGuestsByCatagory(category));
     }
-    public static int AddGuest(GuestDto guest)
+
+    public static List<Common.DTO.BaseCodeDto> GetCatagoryList()
+    {
+      return Converters.GuestConverter.ToDtoCatagoryList(DAL.GuestDal.SelectCatagoryList());
+    }
+    public static int AddGuest(Common.DTO.GuestDto guest)
     {
       try
       {
-        return GuestDal.AddGuest(
-          GuestConverter.ToDalGuest(guest));
+        return DAL.GuestDal.AddGuest(Converters.GuestConverter.ToDalGuest(guest));
       }
       catch (Exception e)
       {
@@ -35,12 +33,11 @@ namespace BLL
         throw e;
       }
     }
-    public static int UpdateGuest(GuestDto guest)
+    public static int UpdateGuest(Common.DTO.GuestDto guest)
     {
       try
       {
-        return GuestDal.UpdateGuest(
-          GuestConverter.ToDalGuest(guest));
+        return DAL.GuestDal.UpdateGuest(Converters.GuestConverter.ToDalGuest(guest));
       }
       catch (Exception e)
       {
@@ -48,12 +45,11 @@ namespace BLL
         throw e;
       }
     }
-    public static int DeleteGuest(GuestDto guest)
+    public static int DeleteGuest(Common.DTO.GuestDto guest)
     {
       try
       {
-        return GuestDal.DeleteGuest(
-          GuestConverter.ToDalGuest(guest));
+        return DAL.GuestDal.DeleteGuest(Converters.GuestConverter.ToDalGuest(guest));
       }
       catch (Exception e)
       {
