@@ -44,3 +44,12 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+/bin
+bin/
+API/bin
+API/obj/Debug
+Common/bin/Debug
+Converters/bin/Debug
+DAL/bin/Debug
+DAL/obj/Debug
